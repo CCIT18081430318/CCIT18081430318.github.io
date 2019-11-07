@@ -62,6 +62,61 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Bluetooth" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/07/Bluetooth/" class="article-date">
+  <time datetime="2019-11-07T01:08:20.000Z" itemprop="datePublished">2019-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/07/Bluetooth/">Bluetooth</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="STM32Cube-MX蓝牙功能及相关配置"><a href="#STM32Cube-MX蓝牙功能及相关配置" class="headerlink" title="STM32Cube MX蓝牙功能及相关配置"></a><strong>STM32Cube MX蓝牙功能及相关配置</strong></h1><h2 id="一-打开软件"><a href="#一-打开软件" class="headerlink" title="一.打开软件"></a><strong>一.打开软件</strong></h2><p>  1.点击工具栏中的help，选中Manage embedded software packages,下载STM32F4的1.24.1版本固件包。</p>
+<p>  2.选中STMicroelectronics,下载X_CUBE_BLE1的4.4.0版本的固件包和X_CUBE_MEMS1的6.2.0固件包。</p>
+<h2 id="二-点击New-projiet-进入芯片选择页面"><a href="#二-点击New-projiet-进入芯片选择页面" class="headerlink" title="二.点击New projiet 进入芯片选择页面"></a><strong>二.点击New projiet 进入芯片选择页面</strong></h2><p>我在这里选择的是STM32F401RETx   <strong>(注：大家可以根据自己芯片的型号进行选择)</strong></p>
+<h2 id="三-选择芯片后进入工程配置"><a href="#三-选择芯片后进入工程配置" class="headerlink" title="三.选择芯片后进入工程配置"></a><strong>三.选择芯片后进入工程配置</strong></h2><p>  1.在Additional Software中的STMicorelectronics.X_CUBE_BLE1分别展开隐藏的文件，(Application中选择Beacon),(HCI_TL选择Basic),(HCI_TL_INTERFACE选择UserBoard)。</p>
+<p>  2.在System Core中配置SWD调试模式。选中SYS,Debug中选择Serial Wire。</p>
+<p>  3.在Connectivity中配置全双工模式和串口的异步模式。</p>
+<p>在SPI1的Mode中选择Full_Duplex Master(全双工模式),在下面的Parameter Settings配置时钟参数，</p>
+<p>在Clock Parameters中配置 Prescaler（预分频器）为4；</p>
+<p>选择USART1,Mode中选择Asynchronous(异步模式)</p>
+<p>  4.点击Additional Software 下方的X_CUBE_BLE1.4.4.0。</p>
+<p>把Wireless BlueNRG_MS和 Wireless Application都勾选上。</p>
+<p>在Platform Settings下方进行相关配置，根据原理图把 PC4设置为外部中断引脚，在Exti Line中选择PC4；</p>
+<p>因为当初是在SPI1中设置的全双工模式，所以BUS IO driver中选择的是SPI1;</p>
+<p>设置PA4和PB1为GPIO_Output,在CS Line 中选择PA4,</p>
+<p>Reset Linez 中选择PB1，</p>
+<p>在BSP USART中选择USART1。</p>
+<p>  5.选择芯片上方的System view,然后选中GPIO,在左侧的方格中选择NVIC把EXTI line4 interrruput 勾选上。</p>
+<h2 id="四-点击菜单栏中的Project-Manager进入工程配置"><a href="#四-点击菜单栏中的Project-Manager进入工程配置" class="headerlink" title="四.点击菜单栏中的Project Manager进入工程配置"></a><strong>四.点击菜单栏中的Project Manager进入工程配置</strong></h2><p>  1,将新的工程名命名并选择工程路径，然后点击GENERATE CODE生成工程。<br>(注：最好为全英文名和全英文路径，否则容易发生错误。)</p>
+<p>  2，进入工程后运行查看是否有错误和警告，若为<strong>0警告</strong>和<strong>0错误</strong>则工程建立成功。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/07/Bluetooth/" data-id="ck2o1qnd20000d4vg5j7160ky" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-helloccit" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/16/helloccit/" class="article-date">
@@ -144,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/16/helloccit/" data-id="ck2nib1jl0001kwvgzaxisagw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/16/helloccit/" data-id="ck2o1qndl0001d4vgfeqnwq40" class="article-share-link">Share</a>
       
       
     </footer>
@@ -193,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/11/hello-world/" data-id="ck2nib1jg0000kwvghrezdo70" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/11/hello-world/" data-id="ck2o1qne40002d4vgfvmewkgn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -221,7 +276,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
     </div>
   </div>
 
@@ -232,6 +287,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/11/07/Bluetooth/">Bluetooth</a>
+          </li>
         
           <li>
             <a href="/2019/10/16/helloccit/">helloccit</a>
